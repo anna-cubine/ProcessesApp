@@ -36,7 +36,7 @@ int main() {
             printf("Child process PID: %d - Executing commands: %s\n", getpid(),commands[i][0]);
             //First is what kind of system call, second is the actual commands
             execvp(commands[i][0],commands[i]);
-            printf("execvp failed");
+            perror("execvp failed");
             exit(EXIT_FAILURE);
         }
     }
